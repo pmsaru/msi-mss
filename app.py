@@ -23,6 +23,7 @@ def load_image(img):
     return image
 
 # Uploading the File to the Page
+st.sidebar.title("upload_Image")
 uploadFile = st.file_uploader(label="Upload image")
 
 # Checking the Format of the page
