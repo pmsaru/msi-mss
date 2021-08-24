@@ -28,7 +28,7 @@ selected_box = st.sidebar.selectbox(
     ('About MSI-MSS','Upload Image','Predict')
     )
 if selected_box == 'About MSI-MSS':
-    st.write("A change that occurs in certain cells (such as cancer cells) in which the number of repeated DNA bases in a microsatellite (a short, repeated sequence of DNA) is different from what it was when the microsatellite was inherited. ") 
+    st.write("A change that occurs in certain cells such as cancer cells in which the number of repeated DNA bases in a microsatellite a short, repeated sequence of DNA is different from what it was when the microsatellite was inherited. ") 
 if selected_box == 'Upload Image':
     uploadFile = st.file_uploader(label="Upload image")
         
