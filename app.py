@@ -23,9 +23,17 @@ def load_image(img):
     return image
 
 # Uploading the File to the Page
-st.sidebar.title("upload_Image")
-uploadFile = st.file_uploader(label="Upload image")
+selected_box = st.sidebar.selectbox(
+    'Choose one of the following',
+    ('Upload Image','Predict')
+    )
 
+if selected_box == 'Upload Image':
+    uploadFile = st.file_uploader(label="Upload image")
+        
+if selected_box == 'Predict':
+    predict()
+    
 # Checking the Format of the page
 if uploadFile is not None:
     global img
@@ -36,5 +44,5 @@ if uploadFile is not None:
 else:
     st.write("Make sure you image is in JPG/PNG Format.")
 
-if st.button('predict'):
-    predict()
+# if st.button('predict'):
+#     predict()
