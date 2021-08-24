@@ -23,27 +23,18 @@ def load_image(img):
     return image
 
 # Uploading the File to the Page
-selected_box = st.sidebar.selectbox(
-    'Choose one of the following',
-    ('About MSI-MSS','Upload Image','Predict')
-    )
-if selected_box == 'About MSI-MSS':
-    st.write("A change that occurs in certain cells such as cancer cells in which the number of repeated DNA bases in a microsatellite a short, repeated sequence of DNA is different from what it was when the microsatellite was inherited. ") 
-if selected_box == 'Upload Image':
-    uploadFile = st.file_uploader(label="Upload image")
-        
-if selected_box == 'Predict':
-    predict()
-    
-# Checking the Format of the page
-if uploadFile is not None:
-    global img
-    # Perform your Manupilations (In my Case applying Filters)
-    img = load_image(uploadFile)
-    st.image(img)
-    st.write("Image Uploaded Successfully")
-else:
-    st.write("Make sure you image is in JPG/PNG Format.")
 
-# if st.button('predict'):
-#     predict()
+if st.sidebar('upload Image'):
+    uploadFile = st.file_uploader(label="Upload image")
+    # Checking the Format of the page
+    if uploadFile is not None:
+        global img
+        # Perform your Manupilations (In my Case applying Filters)
+        img = load_image(uploadFile)
+        st.image(img)
+        st.write("Image Uploaded Successfully")
+    else:
+        st.write("Make sure you image is in JPG/PNG Format.")
+
+if st.button('predict'):
+    predict()
