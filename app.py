@@ -24,17 +24,17 @@ def load_image(img):
 
 # Uploading the File to the Page
 
-if st.sidebar('upload Image'):
-    uploadFile = st.file_uploader(label="Upload image")
-    # Checking the Format of the page
-    if uploadFile is not None:
-        global img
-        # Perform your Manupilations (In my Case applying Filters)
-        img = load_image(uploadFile)
-        st.image(img)
-        st.write("Image Uploaded Successfully")
-    else:
-        st.write("Make sure you image is in JPG/PNG Format.")
+
+uploadFile = st.file_uploader(label="Upload image")
+# Checking the Format of the page
+if uploadFile is not None:
+    global img
+    # Perform your Manupilations (In my Case applying Filters)
+    img = load_image(uploadFile)
+    st.image(img)
+    st.write("Image Uploaded Successfully")
+else:
+    st.write("Make sure you image is in JPG/PNG Format.")
 
 if st.button('predict'):
     predict()
