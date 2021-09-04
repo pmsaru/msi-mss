@@ -12,7 +12,7 @@ st.text("Upload a histopathological images for classifying as MSI or no-MSS")
 
 def predict():
     # load the pre trained model
-    learn_inf = load_learner('export.pkl')
+    learn_inf = load_learner('data/export.pkl')
     learn_inf.dls.vocab
     pred_class,pred_idx,probs = learn_inf.predict(img)
     st.write('predicted Class: {} '.format(pred_class) )
